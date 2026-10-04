@@ -2583,7 +2583,7 @@ stopAllEmotes = replicatedStorage.Packages._Index["sleitnick_knit@1.7.0"].knit.S
 effect = replicatedStorage.Packages._Index["sleitnick_knit@1.7.0"].knit.Services.GameService.RE.Effect
 
 local v232 = {
-  NameTag = "PARASITE PROTECTION",
+  NameTag = "IDE用户-保护",
   Title = "<font color='#FF0000'><b>Pro</b></font>",
   NotifConn = nil,
   NotifConn2 = nil,
