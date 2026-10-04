@@ -9264,18 +9264,27 @@ do
     ScreenGui_7.DisplayOrder = 9999
     ScreenGui_7.Parent = LocalPlayer_2:WaitForChild("PlayerGui")
 
-    local ImageButton = Instance.new("ImageButton")
-    ImageButton.Size = UDim2.new(0, 55, 0, 55)
-    ImageButton.Position = UDim2.new(0.01, 0, 0.5, -27.5)
-    ImageButton.BackgroundColor3 = Color3.fromRGB(11, 12, 16)
-    ImageButton.BackgroundTransparency = 0.15
-    ImageButton.BorderSizePixel = 0
-    ImageButton.Selectable = false
-    ImageButton.ZIndex = 9999
-    ImageButton.Image = "rbxassetid://84429381973640"
-    ImageButton.ImageTransparency = 0.1
-    ImageButton.ScaleType = Enum.ScaleType.Fit
-    ImageButton.Parent = ScreenGui_7
+    -- 创建文本按钮（替代原来的 ImageButton 以保持可点击性）
+local Logo = Instance.new("TextButton") 
+Logo.Size = UDim2.new(0, 100, 0, 25) -- 宽度调大以适应文字
+Logo.Position = UDim2.new(0.01, 0, 0.5, -27.5) -- 填入原图中的 Position
+Logo.BackgroundColor3 = Color3.fromRGB(11, 12, 16) -- 保留原图的背景色
+Logo.BackgroundTransparency = 0.15 -- 保留原图的背景透明度
+Logo.BorderSizePixel = 0
+Logo.ZIndex = 9999
+Logo.Parent = ScreenGui_7 -- 填入原图中的 Parent 目标
+
+-- 文字属性设置
+Logo.Text = "IDE" 
+Logo.Font = Enum.Font.GothamBold 
+Logo.TextSize = 16 
+Logo.TextColor3 = Color3.fromRGB(255, 255, 255) 
+Logo.TextXAlignment = Enum.TextXAlignment.Center -- 建议居中，配合背景框更好看
+
+-- 保留原图的圆角设计
+local UICorner_9 = Instance.new("UICorner")
+UICorner_9.CornerRadius = UDim.new(1, 0)
+UICorner_9.Parent = Logo
 
     local UICorner_9 = Instance.new("UICorner")
     UICorner_9.CornerRadius = UDim.new(1, 0)
