@@ -9287,6 +9287,20 @@ ImageButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 local UICorner_9 = Instance.new("UICorner")
 UICorner_9.CornerRadius = UDim.new(1, 0)
 UICorner_9.Parent = ImageButton
+-- 1. 创建外围边框 (UIStroke)
+local UIStroke = Instance.new("UIStroke")
+UIStroke.Thickness = 2.0 -- 边框的粗细，你可以把 2.5 改成你喜欢的数值
+UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border -- 确保边框作用于外部边缘
+UIStroke.Parent = ImageButton -- 绑定到我们的圆形按钮上
+
+-- 2. 添加 RGB 动态变色效果
+local RunService = game:GetService("RunService")
+RunService.RenderStepped:Connect(function()
+    -- tick() % 4 / 4 意味着每 4 秒完成一次红橙黄绿青蓝紫的完整循环
+    -- 如果你想让变色快一点，可以把两个 4 都改成 2 
+    local hue = tick() % 4 / 4 
+    UIStroke.Color = Color3.fromHSV(hue, 1, 1)
+end)
 
     local UICorner_9 = Instance.new("UICorner")
     UICorner_9.CornerRadius = UDim.new(1, 0)
